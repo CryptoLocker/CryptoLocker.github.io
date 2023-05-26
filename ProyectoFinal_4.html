@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Actividad 4</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-image: url("WallpaperDog-5566801-min.jpg");
+            background-repeat: repeat;
+            background-color: #52487c;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #6e609e;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+            font-family: 'Impact', sans-serif;
+            color: #3d023d;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .content {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        img {
+            width: 500px;
+            height: 550px;
+            margin: 20px auto; /* Centrar las imágenes horizontalmente */
+        }
+
+        .container {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .centered-container {
+            text-align: center;
+        }
+
+        .centered-container img {
+            width: 500px;
+            height: 550px;
+            margin: 20px auto; /* Centrar horizontal y verticalmente */
+        }
+
+        .reactions {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .reactions i {
+            font-size: 24px;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .reactions i.active {
+            color: #ffcc00;
+        }
+
+        .reactions:nth-child(2) {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const reactionIcons = document.querySelectorAll('.reactions i');
+            reactionIcons.forEach(icon => {
+                icon.addEventListener('click', () => {
+                    icon.classList.toggle('active');
+                });
+            });
+
+            // Cambio de imagen de Pokémon
+            const pokemonImage = document.querySelector('#pokemon-image');
+            const pokemonImages = [
+                'pokemon-pixel-art.gif',
+                'pokemon-image-2.gif',
+                'pokemon-image-3.gif'
+            ];
+            let currentImageIndex = 0;
+
+            function changePokemonImage() {
+                pokemonImage.src = pokemonImages[currentImageIndex];
+                currentImageIndex = (currentImageIndex + 1) % pokemonImages.length;
+            }
+
+            setInterval(changePokemonImage, 3000); // Cambiar imagen cada 3 segundos (ajusta el tiempo según tus necesidades)
+        });
+    </script>
+</head>
+<body>
+    <audio src="Pokemon Rojo Fuego (intro) (online-audio-converter.com).ogg" autoplay loop></audio>
+    <header>
+        <h1>Introducción a la Ingeniería de Sistemas - Actividad 4</h1>
+    </header>
+    <main>
+        <div class="content">
+            <h2></h2>
+
+            <h3>¿En qué zonas del conflicto armado se registra el mayor número de víctimas?</h3>
+
+            <div class="container">
+                <h3><b>-BigQuery-</b></h3>
+                <img src="victimas.png">
+                <div class="reactions">
+                    <i class="fas fa-thumbs-up"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-laugh"></i>
+                </div>
+            </div>
+
+            <div class="container">
+                <h3><b>-LookerStudio-</b></h3>
+                <img src="Captura de pantalla 2023-05-26 173718.png">
+                <div class="reactions">
+                    <i class="fas fa-thumbs-up"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-laugh"></i>
+                </div>
+            </div>
+
+            <div class="centered-container">
+                <img id="" src="R.gif" alt="">
+            </div>
+        </div>
+    </main>
+</body>
+</html>
